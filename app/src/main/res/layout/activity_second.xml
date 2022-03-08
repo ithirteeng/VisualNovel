@@ -1,7 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutSecond"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity" />
+    tools:context=".SecondActivity" >
+
+    <ImageView
+        android:id="@+id/secondScreenBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/content_description"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/entry_with_kiryusha" />
+
+    <TextView
+        android:id="@+id/secondScreenHeader"
+        style="@style/screensHeaderStyle"
+        android:layout_marginTop="100dp"
+        android:text="@string/second_screen_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/roboto"
+        android:gravity="center|start"
+        android:inputType="textPersonName"
+        android:paddingStart="@dimen/edit_text_padding_start"
+        android:paddingTop="@dimen/edit_text_bottom_padding"
+        android:paddingEnd="@dimen/edit_text_padding_start"
+        android:paddingBottom="@dimen/edit_text_bottom_padding"
+        android:text="@string/second_screen_text"
+        android:textSize="@dimen/main_text_size"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondScreenHeader"
+        app:layout_constraintVertical_bias="0.299"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/screensHeaderStyle"
+        android:text="@string/second_screen_button_text"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

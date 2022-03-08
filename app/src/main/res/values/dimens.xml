@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_start_and_end">16dp</dimen>
+    <dimen name="padding_top_and_bottom">11dp</dimen>
+    <dimen name="main_text_size">17sp</dimen>
+    <dimen name="edit_text_padding_start">30dp</dimen>
+    <dimen name="edit_text_bottom_padding">25dp</dimen>
+</resources>

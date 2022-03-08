@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">VisualNovel</string>
+    <string name="content_description">background image</string>
+    <string name="first_screen_header_text">Моя визуальная новелла</string>
+    <string name="first_screen_button_text">Начать</string>
+    <string name="second_screen_header">Привет! Меня зовут Кирюша. А тебя?</string>
+    <string name="second_screen_text">Введите свое имя...</string>
+    <string name="second_screen_button_text">Подтвердить</string>
 </resources>
