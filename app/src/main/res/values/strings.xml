@@ -6,4 +6,5 @@
     <string name="second_screen_header">Привет! Меня зовут Кирюша. А тебя?</string>
     <string name="second_screen_text">Введите свое имя...</string>
     <string name="second_screen_button_text">Подтвердить</string>
+    <string name="name_error">Пожалуйста, введите свое имя</string>
 </resources>

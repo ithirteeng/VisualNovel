@@ -2,7 +2,7 @@ package com.example.visualnovel
 
 data class Screen(
     val id: Int,
-    val header: String,
+    var header: String,
     val background: String,
     val arrayOfVariants: List<Variants>
 )

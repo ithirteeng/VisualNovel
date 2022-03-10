@@ -1,9 +1,9 @@
 {
-  "scenes": [
+  "screens": [
     {
       "id": 3,
       "header": "Отлично, /NAME! Чем займемся?",
-      "background": "firstBackground",
+      "background": "entry_with_kiryusha",
       "arrayOfVariants": [
         {
           "nextId": 4,
@@ -23,7 +23,7 @@
     {
       "id": 4,
       "header": "Может, пойдем домой?...",
-      "background": "firstBackground",
+      "background": "sport_cats",
       "arrayOfVariants": [
         {
           "nextId": 7,
@@ -38,7 +38,7 @@
     {
       "id": 5,
       "header": "Как уютно... Но уже темнеет.",
-      "background": "firstBackground",
+      "background": "cats_on_camping",
       "arrayOfVariants": [
         {
           "nextId": 7,
@@ -46,14 +46,14 @@
         },
         {
           "nextId": 8,
-          "variantText": "Дв, и отпразнуем хэллоуин"
+          "variantText": "Да, и отпразнуем хэллоуин"
         }
       ]
     },
     {
       "id": 6,
       "header": "Тебе грустно... Пойдем домой?",
-      "background": "firstBackground",
+      "background": "walking_cats",
       "arrayOfVariants": [
         {
           "nextId": 7,
@@ -68,7 +68,7 @@
     {
       "id": 7,
       "header": "Как тебе фильм?",
-      "background": "firstBackground",
+      "background": "watching_film_cats",
       "arrayOfVariants": [{
         "nextId": 9,
         "variantText": "Мне понравился!"
@@ -82,7 +82,7 @@
     {
       "id": 8,
       "header": "Получается очень красиво!",
-      "background": "firstBackground",
+      "background": "halloween_cats",
       "arrayOfVariants": [{
         "nextId": 7,
         "variantText": "Да! Может, посмотрим фильм?"
@@ -96,7 +96,7 @@
     {
       "id": 9,
       "header": "Отлично! А теперь пора спать...",
-      "background": "firstBackground",
+      "background": "watching_film_cats",
       "arrayOfVariants": [{
         "nextId": 14,
         "variantText": "Да, уже поздно..."
@@ -106,7 +106,7 @@
     {
       "id": 10,
       "header": "Жаль... Теперь пора спать?",
-      "background": "firstBackground",
+      "background": "watching_film_cats",
       "arrayOfVariants": [{
         "nextId": 14,
         "variantText": "Да, уже поздно..."
@@ -116,7 +116,7 @@
     {
       "id": 11,
       "header": "Мне нравится твой костюм.",
-      "background": "firstBackground",
+      "background": "cats_with_costumes",
       "arrayOfVariants": [{
         "nextId": 12,
         "variantText": "Твой тоже очень красивый!"
@@ -130,7 +130,7 @@
     {
       "id": 12,
       "header": "Спасибо! Ну, пойдем спать?",
-      "background": "firstBackground",
+      "background": "cats_with_costumes",
       "arrayOfVariants": [{
         "nextId": 14,
         "variantText": "Да, уже поздно..."
@@ -140,7 +140,7 @@
     {
       "id": 13,
       "header": "Ничего, я не в обиде. Пойдем спать?",
-      "background": "firstBackground",
+      "background": "cats_with_costumes",
       "arrayOfVariants": [{
         "nextId": 14,
         "variantText": "Да, уже поздно..."
@@ -150,7 +150,7 @@
     {
       "id": 14,
       "header": "Спасибо, что поиграли",
-      "background": "firstBackground",
+      "background": "exit_and_entry",
       "arrayOfVariants": [{
         "nextId": 1,
         "variantText": "Пройти еще раз"
