@@ -1,4 +1,7 @@
+@file:Suppress("NAME_SHADOWING")
+
 package com.example.visualnovel
+
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,7 +14,6 @@ class SceneActivity : AppCompatActivity() {
 
     companion object {
         const val ID = "intent_id"
-        const val backgroundPath = "R.drawable."
     }
 
     private lateinit var binding: ActivitySceneBinding
@@ -25,22 +27,29 @@ class SceneActivity : AppCompatActivity() {
 
         val jsonParser = JSONParser()
         val listOfScreens: List<Screen> = jsonParser.parseJSON(this, "screens")
+        val sceneButtonGroup = arrayOf(R.id.firstButton, R.id.secondButton, R.id.thirdButton)
 
         for (screen in listOfScreens) {
             if (screen.id == currentScreenId) {
-
                 if (currentScreenId == 3) {
                     screen.header = screen.header.replace("/NAME!", "YOUR NAME")
                 }
-                binding.sceneHeader.text = screen.header
-                binding.sceneBackgroundImage.setImageResource(resources.getIdentifier(screen.background, "drawable", packageName))
 
-                for(currentButton in binding.sceneButtonsGroup.referencedIds) {
+                for (currentButton in sceneButtonGroup) {
                     val button = binding.root.findViewById<Button>(currentButton)
                     makeButtonInvisible(button)
                 }
 
-                for((counter, currentButton) in binding.sceneButtonsGroup.referencedIds.withIndex()) {
+                binding.sceneHeader.text = screen.header
+                binding.sceneBackgroundImage.setImageResource(
+                    resources.getIdentifier(
+                        screen.background,
+                        "drawable",
+                        packageName
+                    )
+                )
+
+                for ((counter, currentButton) in sceneButtonGroup.withIndex()) {
                     if (counter == screen.arrayOfVariants.size) {
                         break
                     } else {
@@ -50,12 +59,20 @@ class SceneActivity : AppCompatActivity() {
                     }
                 }
 
-                for ((counter, currentButton) in binding.sceneButtonsGroup.referencedIds.withIndex()) {
+                for ((counter, currentButton) in sceneButtonGroup.withIndex()) {
                     val button = binding.root.findViewById<Button>(currentButton)
                     if (button.isEnabled) {
                         button.setOnClickListener {
-                            val toNextActivityIntent = Intent(this, SceneActivity::class.java)
-                            toNextActivityIntent.putExtra(ID, screen.arrayOfVariants[counter].nextId)
+                            val toNextActivityIntent = Intent(
+                                this,
+                                if (screen.arrayOfVariants[counter].nextId == 1) {
+                                    MainActivity::class.java
+                                } else SceneActivity::class.java
+                            )
+                            toNextActivityIntent.putExtra(
+                                ID,
+                                screen.arrayOfVariants[counter].nextId
+                            )
                             startActivity(toNextActivityIntent)
                             finish()
                         }
@@ -67,11 +84,10 @@ class SceneActivity : AppCompatActivity() {
         }
 
 
-
     }
 
     private fun makeButtonInvisible(button: Button) {
-        button.visibility = View.GONE
+        button.visibility = View.INVISIBLE
         button.isEnabled = false
     }
 
