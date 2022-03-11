@@ -42,11 +42,11 @@
       "arrayOfVariants": [
         {
           "nextId": 7,
-          "variantText": "Да, и посмотрим фильм"
+          "variantText": "Пойдем домой и посмотрим фильм"
         },
         {
           "nextId": 8,
-          "variantText": "Да, и отпразнуем хэллоуин"
+          "variantText": "Пойдем домой и отпразнуем хэллоуин"
         }
       ]
     },
@@ -149,7 +149,7 @@
     },
     {
       "id": 14,
-      "header": "Спасибо, что поиграли",
+      "header": "Спасибо, что поиграли!",
       "background": "exit_and_entry",
       "arrayOfVariants": [{
         "nextId": 1,

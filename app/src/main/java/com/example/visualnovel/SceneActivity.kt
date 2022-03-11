@@ -17,6 +17,7 @@ class SceneActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivitySceneBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySceneBinding.inflate(layoutInflater)
 
@@ -24,15 +25,32 @@ class SceneActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val currentScreenId = intent.getIntExtra(ID, 0)
+        val storage = Storage()
+
+        val sceneButtonGroup = arrayOf(R.id.firstButton, R.id.secondButton, R.id.thirdButton)
 
         val jsonParser = JSONParser()
         val listOfScreens: List<Screen> = jsonParser.parseJSON(this, "screens")
-        val sceneButtonGroup = arrayOf(R.id.firstButton, R.id.secondButton, R.id.thirdButton)
 
         for (screen in listOfScreens) {
             if (screen.id == currentScreenId) {
                 if (currentScreenId == 3) {
-                    screen.header = screen.header.replace("/NAME!", "YOUR NAME")
+                    screen.header = screen.header.replace(
+                        "/NAME",
+                        storage.takeSharedPreference(this, SecondActivity.NICKNAME).toString()
+                    )
+                }
+
+                if (currentScreenId == 14) {
+                    binding.sceneHeader.setTextAppearance(R.style.firstAndLastHeaderStyle)
+                    binding.sceneHeader.setBackgroundColor(
+                        resources.getColor(
+                            R.color.firstMainColor,
+                            this.theme
+                        )
+                    )
+                    binding.root.findViewById<Button>(sceneButtonGroup[0])
+                        .setBackgroundColor(resources.getColor(R.color.secondMainColor, this.theme))
                 }
 
                 for (currentButton in sceneButtonGroup) {
@@ -50,28 +68,31 @@ class SceneActivity : AppCompatActivity() {
                 )
 
                 for ((counter, currentButton) in sceneButtonGroup.withIndex()) {
-                    if (counter == screen.arrayOfVariants.size) {
+                    val size = screen.arrayOfVariants.size
+                    if (counter == size) {
                         break
                     } else {
                         val button = binding.root.findViewById<Button>(currentButton)
                         makeButtonVisible(button)
-                        button.text = screen.arrayOfVariants[counter].variantText
+                        button.text = screen.arrayOfVariants[size - counter - 1].variantText
                     }
                 }
 
                 for ((counter, currentButton) in sceneButtonGroup.withIndex()) {
                     val button = binding.root.findViewById<Button>(currentButton)
+                    val size = screen.arrayOfVariants.size
                     if (button.isEnabled) {
                         button.setOnClickListener {
                             val toNextActivityIntent = Intent(
                                 this,
-                                if (screen.arrayOfVariants[counter].nextId == 1) {
+                                if (screen.arrayOfVariants[size - counter - 1].nextId == 1) {
+                                    storage.clearSharedPreferences(this)
                                     MainActivity::class.java
                                 } else SceneActivity::class.java
                             )
                             toNextActivityIntent.putExtra(
                                 ID,
-                                screen.arrayOfVariants[counter].nextId
+                                screen.arrayOfVariants[size - counter - 1].nextId
                             )
                             startActivity(toNextActivityIntent)
                             finish()

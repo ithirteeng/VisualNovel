@@ -32,17 +32,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/thirdButton"
+        android:id="@+id/firstButton"
         style="@style/screensButtonsStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_top_and_bottom"
         android:layout_marginBottom="@dimen/padding_top_and_bottom"
-        app:layout_constraintBottom_toTopOf="@+id/secondButton"
+        app:layout_constraintBottom_toTopOf="@+id/bottomButtonsGuideline"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topButtonsGuideline"
-        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@+id/secondButton"
         tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
 
     <Button
@@ -59,17 +59,17 @@
         tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/firstButton"
+        android:id="@+id/thirdButton"
         style="@style/screensButtonsStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_top_and_bottom"
         android:layout_marginBottom="@dimen/padding_top_and_bottom"
-        app:layout_constraintBottom_toTopOf="@+id/bottomButtonsGuideline"
+        app:layout_constraintBottom_toTopOf="@+id/secondButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondButton"
+        app:layout_constraintTop_toTopOf="@+id/topButtonsGuideline"
+        app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="TextContrastCheck,SpeakableTextPresentCheck" />
 
     <androidx.constraintlayout.widget.Guideline
