@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VisualNovel">
         <activity
-            android:name=".SceneActivity"
+            android:screenOrientation="portrait"
+            android:name=".ui.SceneActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:screenOrientation="portrait"
+            android:name=".ui.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

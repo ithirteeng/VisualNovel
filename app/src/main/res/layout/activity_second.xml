@@ -5,7 +5,7 @@
     android:id="@+id/layoutSecond"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity" >
+    tools:context=".ui.SecondActivity" >
 
     <ImageView
         android:id="@+id/secondScreenBackground"

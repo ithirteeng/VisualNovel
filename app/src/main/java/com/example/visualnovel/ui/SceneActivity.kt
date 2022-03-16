@@ -1,6 +1,6 @@
 @file:Suppress("NAME_SHADOWING")
 
-package com.example.visualnovel
+package com.example.visualnovel.ui
 
 
 import android.content.Intent
@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import com.example.visualnovel.*
+import com.example.visualnovel.model.Constants
+import com.example.visualnovel.model.Storage
+import com.example.visualnovel.tools.JSONParser
 import com.example.visualnovel.databinding.ActivitySceneBinding
 
 class SceneActivity : AppCompatActivity() {
@@ -29,8 +33,7 @@ class SceneActivity : AppCompatActivity() {
 
         val sceneButtonGroup = arrayOf(R.id.firstButton, R.id.secondButton, R.id.thirdButton)
 
-        val jsonParser = JSONParser()
-        val listOfScreens: List<Screen> = jsonParser.parseJSON(this, "screens")
+        val listOfScreens: List<Screen> = JSONParser.parseJSON(this, Constants.JSON_SEPARATOR)
 
         for (screen in listOfScreens) {
             if (screen.id == currentScreenId) {

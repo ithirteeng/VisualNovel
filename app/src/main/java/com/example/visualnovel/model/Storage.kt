@@ -1,4 +1,4 @@
-package com.example.visualnovel
+package com.example.visualnovel.model
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -12,7 +12,7 @@ class Storage {
     private var editor: SharedPreferences.Editor? = null
     private var context: Context? = null
 
-    fun init(mContext: Context) {
+    private fun init(mContext: Context) {
         context = mContext
         settings = context?.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE)
         editor = settings?.edit()

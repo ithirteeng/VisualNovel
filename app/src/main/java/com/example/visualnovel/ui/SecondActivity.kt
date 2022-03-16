@@ -1,9 +1,12 @@
-package com.example.visualnovel
+package com.example.visualnovel.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.visualnovel.model.Constants
+import com.example.visualnovel.R
+import com.example.visualnovel.model.Storage
 import com.example.visualnovel.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
@@ -25,7 +28,7 @@ class SecondActivity : AppCompatActivity() {
             } else {
                 Storage().makeSavedPreference(this, NICKNAME, binding.nicknameEditText.text.toString())
                 val secondIntent = Intent(this, SceneActivity::class.java)
-                secondIntent.putExtra(SceneActivity.ID, 3)
+                secondIntent.putExtra(SceneActivity.ID, Constants.DEFAULT_INTENT_NUMBER)
                 startActivity(secondIntent)
             }
         }

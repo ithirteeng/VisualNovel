@@ -5,14 +5,14 @@
     android:id="@+id/mainScreenLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SceneActivity">
+    tools:context=".ui.SceneActivity">
 
     <ImageView
         android:id="@+id/sceneBackgroundImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/content_description"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
