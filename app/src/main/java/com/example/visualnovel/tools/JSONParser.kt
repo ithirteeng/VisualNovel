@@ -2,6 +2,7 @@ package com.example.visualnovel.tools
 
 import android.content.Context
 import android.widget.Toast
+import com.example.visualnovel.R
 import com.example.visualnovel.Screen
 import com.google.gson.Gson
 import org.json.JSONObject
@@ -31,7 +32,10 @@ class JSONParser {
 
                 json = String(bufferArray, Charset.defaultCharset())
             } catch (exception: Exception) {
-                Toast.makeText(context, "JSON file is empty!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,
+                    context.resources.getString(R.string.JSON_error),
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             return json
