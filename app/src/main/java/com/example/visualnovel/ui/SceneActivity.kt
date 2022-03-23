@@ -24,7 +24,6 @@ class SceneActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivitySceneBinding.inflate(layoutInflater)
-
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 

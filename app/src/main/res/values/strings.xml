@@ -7,4 +7,5 @@
     <string name="second_screen_text">Введите свое имя...</string>
     <string name="second_screen_button_text">Подтвердить</string>
     <string name="name_error">Пожалуйста, введите свое имя</string>
+    <string name="JSON_error">JSON file is empty!></string>
 </resources>
